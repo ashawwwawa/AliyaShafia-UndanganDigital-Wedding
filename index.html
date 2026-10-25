@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Sasha & Yuvan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Audio Latar Belakang -->
+    <audio id="bgMusic" src="amin paling serius.mp3" loop></audio>
+
+    <!-- 1. COVER / AMPLOP UNDANGAN -->
+    <div id="cover-screen" class="cover-screen d-flex flex-column justify-content-center align-items-center text-center">
+        <!-- Elemen Animasi Melayang -->
+        <div class="floating-decor">
+            <i class="fa-solid fa-heart decor-item d1"></i>
+            <i class="fa-solid fa-star decor-item d2"></i>
+            <i class="fa-solid fa-heart decor-item d3"></i>
+            <i class="fa-solid fa-star decor-item d4"></i>
+        </div>
+        <p class="fs-5">The Wedding Of</p>
+        <h1 class="pasangan-title display-1">Sasha & Yuvan</h1>
+        <p class="mt-3">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <h3 class="mb-4">Tamu Undangan</h3>
+        
+        <!-- Tombol Buka Undangan -->
+        <button id="btn-buka" class="btn btn-custom rounded-pill px-4 py-2">
+            <i class="fa-solid fa-envelope-open-text me-2"></i>Open
+        </button>
+    </div>
+
+
+    <main id="main-content" class="d-none position-relative">
+        
+        <!-- Tombol Musik -->
+        <button id="musicBtn" class="btn-music"><i class="fa-solid fa-music"></i></button>
+
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="hero-section text-center position-relative overflow-hidden">
+            <img src="burung.png" alt="Dekorasi Burung" class="decor-bird position-absolute" style="top: 10%; left: 5%; width: 120px; opacity: 0.8;">
+            <p class="fs-5">The Wedding Of</p>
+            <h1 class="pasangan-title">Sasha & Yuvan</h1>
+            <img src="8.jpg" alt="Foto Mempelai" class="img-fluid rounded-4 shadow mt-3 mb-4" style="object-fit: cover;">
+            <p class="fst-italic w-75 mx-auto">"Tidak ada bukti cinta paling nyata dari sebuah cinta selain dengan pernikahan..."</p>
+        </section>
+
+        <!-- 3. MEMPELAI SECTION -->
+       <!-- 3. MEMPELAI SECTION -->
+        <section id="couple" class="container py-5 text-center position-relative">
+            <img src="kupu kupu.png" alt="Dekorasi Kupu-kupu" class="decor-butterfly position-absolute" style="top: 5%; right: 5%; width: 100px; opacity: 0.8;">
+            <h2 class="section-title mb-5">Mempelai</h2>
+            <div class="row align-items-center justify-content-center">
+                
+                <!-- Info Mempelai Pria -->
+                <div class="col-md-5 mb-4 d-flex flex-column align-items-center">
+                    <img src="download (5).jpg" alt="Groom" class="oval-img mb-3 shadow">
+                    <h3 class="font-fatface mt-3">Yuvan Ravabian Satrio</h3>
+                    <p class="mb-2 small">Putra dari Bapak Vabian & Ibu Radia</p>
+                    <a href="https://instagram.com/ramapratama" target="_blank" class="btn btn-outline-custom rounded-pill btn-sm mt-2">
+                         <i class="fa-brands fa-instagram me-1"></i> @ramapratama
+                    </a>
+                </div>
+                
+                <div class="col-md-2 mb-4">
+                    <h1 class="pasangan-title fs-1">&</h1>
+                </div>
+                
+                <!-- Info Mempelai Wanita -->
+                <div class="col-md-5 mb-4 d-flex flex-column align-items-center">
+                    <img src="download (4).jpg" alt="Bride" class="oval-img mb-3 shadow">
+                    <h3 class="font-fatface mt-3">Sasha Aliyanda</h3>
+                    <p class="mb-2 small">Putri dari Bapak Kolidin & Ibu Dahlia</p>
+                    <a href="#" class="btn btn-outline-custom rounded-pill btn-sm mt-2">
+                        <i class="fa-brands fa-instagram me-1"></i> @sashaa
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. COUNTDOWN SECTION -->
+        <section id="countdown" class="bg-secondary-custom py-5 text-center">
+            <div class="container">
+                <p class="fs-5">Save The Date</p>
+                <h2 class="section-title mb-4">1 Agustus 2034</h2>
+                
+                <!-- Timer Hitung Mundur -->
+                <div class="row justify-content-center g-3 timer-box">
+                    <div class="col-auto"><div class="p-3 bg-white rounded shadow-sm"><h3 id="hari">00</h3><small>Hari</small></div></div>
+                    <div class="col-auto"><div class="p-3 bg-white rounded shadow-sm"><h3 id="jam">00</h3><small>Jam</small></div></div>
+                    <div class="col-auto"><div class="p-3 bg-white rounded shadow-sm"><h3 id="menit">00</h3><small>Menit</small></div></div>
+                    <div class="col-auto"><div class="p-3 bg-white rounded shadow-sm"><h3 id="detik">00</h3><small>Detik</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ACARA & LOKASI SECTION -->
+        <section id="event" class="container py-5 text-center position-relative">
+            <img src="bunga.png" alt="Dekorasi Bunga" class="decor-flower position-absolute" style="bottom: 0; left: 50%; transform: translateX(-50%); width: 150px; opacity: 0.8; z-index: -1;">
+            <h2 class="section-title mb-5">Acara</h2>
+            <div class="row justify-content-center g-4">
+    
+                <!-- Lokasi Akad Nikah -->
+                <div class="col-md-5 mb-4">
+                    <div class="card card-event shadow-sm h-100 overflow-hidden text-center">
+                        <img src="Masjid Istiqlal, Jakarta.jpg" alt="Masjid Istiqlal" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <h3 class="font-fatface">Akad Nikah</h3>
+                            <p><strong>Selasa, 1 Agustus 2034</strong><br>08:00 WIB - 10:00 WIB</p>
+                            <p>Masjid Istiqlal<br>Jakarta Pusat, DKI Jakarta</p>
+                            <a href="https://maps.app.goo.gl/Bk2pJ8DaDCCigF2Q9" target="_blank" class="btn btn-custom rounded-pill mt-3">
+                                <i class="fa-solid fa-location-dot me-2"></i>Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lokasi Resepsi -->
+                <div class="col-md-5 mb-4">
+                    <div class="card card-event shadow-sm h-100 overflow-hidden text-center">
+                        <img src="download (6).jpg" alt="Venue Resepsi" class="card-img-top" style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <h3 class="font-fatface">Resepsi</h3>
+                            <p><strong>Selasa, 1 Agustus 2034</strong><br>11:00 WIB - 22:00 WIB</p>
+                            <p>Hotel Indonesia Kempiski Jakarta<br>Jakarta Pusat, DKI Jakarta</p>
+                            <a href="https://maps.app.goo.gl/MudmauYKzdCcyM158" target="_blank" class="btn btn-custom rounded-pill mt-3">
+                                <i class="fa-solid fa-location-dot me-2"></i>Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. KISAH CINTA -->
+        <section id="lovestory" class="bg-secondary-custom py-5">
+            <div class="container text-center">
+                <h2 class="section-title mb-5">Love Story</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-start">
+                        <div class="timeline">
+                            <h4>2026 - Awal Bertemu</h4>
+                            <p>Kami bertemu di sebuah acara sosial yang berlokasi di panti jompo daerah bandung.</p>
+                            <h4>2028 - Bertemu Kembali</h4>
+                            <p>Kami di pertemukan kembali di acara amal, kemudian kami menjadi lebih dekat.</p>
+                            <h4>2034 - Lamaran</h4>
+                            <p>Dengan restu kedua keluarga, kami melangkah ke jenjang yang lebih serius.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERI FOTO -->
+        <section id="gallery" class="py-5 text-center position-relative">
+            <div class="container">
+                <h2 class="section-title mb-5">Our Memories</h2>
+                <div class="row g-3 justify-content-center">
+                    <!-- Foto 1-10 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="1.jpg" alt="Memory 1" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="2.jpg" alt="Memory 2" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="3.jpg" alt="Memory 3" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="4.jpg" alt="Memory 4" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="5.jpg" alt="Memory 5" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="6.jpg" alt="Memory 6" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="7.jpg" alt="Memory 7" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="9.jpg" alt="Memory 8" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="10.jpg" alt="Memory 9" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <img src="11.jpg" alt="Memory 10" class="img-fluid rounded shadow-sm gallery-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WEDDING GIFT -->
+        <section id="gift" class="container py-5 text-center">
+            <h2 class="section-title mb-3">Wedding Gift</h2>
+            <p class="mb-4">Doa restu Anda adalah karunia yang sangat berarti bagi kami.</p>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-5">
+                    <div class="card card-event p-4">
+                        <i class="fa-solid fa-credit-card fs-2 mb-3"></i>
+                        <h4>BCA</h4>
+                        <p class="fs-5 mb-1" id="rek1">99990087123</p>
+                        <p>a.n Yuvan Ravabian Satrio</p>
+                        
+                        <!-- Tombol Salin Rekening -->
+                        <button class="btn btn-sm btn-outline-custom" onclick="copyText('rek1')">Salin No. Rekening</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. RSVP & UCAPAN -->
+        <section id="rsvp" class="bg-secondary-custom py-5">
+            <div class="container text-center">
+                <h2 class="section-title mb-4">RSVP & Ucapan</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-start">
+                        
+                        <!-- Form RSVP -->
+                        <form id="rsvpForm" class="card card-event p-4 shadow-sm mb-4">
+                            <div class="mb-3">
+                                <input type="text" id="nama" class="form-control" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="mb-3">
+                                <select id="kehadiran" class="form-select" required>
+                                    <option value="">Konfirmasi Kehadiran</option>
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Tidak Hadir">Maaf, Tidak Hadir</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="pesan" class="form-control" rows="3" placeholder="Ucapan & Doa" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Kirim</button>
+                        </form>
+
+                        <!-- Daftar Ucapan Tersimpan -->
+                        <div class="mt-5">
+                            <h4 class="font-fatface mb-3" style="color: var(--bg-primary);">Kumpulan Doa & Ucapan</h4>
+                            
+                            <!-- Wadah daftar ucapan (diisi dari script.js) -->
+                            <div id="daftar-ucapan" style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FOOTER -->
+        <footer class="text-center py-5" style="margin-bottom: 70px;">
+            <p>Thank You</p>
+            <h2 class="pasangan-title fs-2">Sasha & Yuvan</h2>
+        </footer>
+
+        <!-- 9. BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+            <a href="#hero"><i class="fa-solid fa-house"></i></a>
+            <a href="#couple"><i class="fa-solid fa-heart"></i></a>
+            <a href="#event"><i class="fa-solid fa-calendar-days"></i></a>
+            <a href="#gift"><i class="fa-solid fa-gift"></i></a>
+            <a href="#rsvp"><i class="fa-solid fa-envelope"></i></a>
+        </nav>
+
+    </main>
+
+    <!-- Script Utama -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

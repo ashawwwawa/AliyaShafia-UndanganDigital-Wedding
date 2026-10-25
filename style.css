@@ -1,0 +1,258 @@
+/* --- 1. PENGATURAN WARNA & GLOBAL --- */
+:root {
+    --bg-primary: #B7C7D6;
+    --bg-secondary: #91A1B2;
+    --accent-blue: #334B60;
+    --text-dark: #061C2C;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    font-family: 'Josefin Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- 2. PENGATURAN TEKS (TIPOGRAFI) --- */
+.section-title, .font-fatface {
+    font-family: 'Abril Fatface', serif;
+    letter-spacing: 2px;
+}
+
+.pasangan-title {
+    font-family: 'Pacifico', cursive;
+    color: var(--text-dark);
+}
+
+/* --- 3. WARNA BACKGROUND KHUSUS --- */
+.bg-secondary-custom {
+    background-color: var(--accent-blue);
+    color: var(--bg-primary); 
+}
+
+.bg-secondary-custom .section-title {
+    color: var(--bg-primary);
+}
+
+/* --- 4. TAMPILAN AWAL (COVER / AMPLOP UNDANGAN) --- */
+.cover-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(6, 28, 44, 0.7), rgba(6, 28, 44, 0.7)), url('898397825687101111.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--bg-primary); 
+    z-index: 9999;
+    transition: transform 0.8s ease-in-out;
+}
+
+.cover-screen .pasangan-title {
+    color: var(--bg-primary);
+}
+
+/* Efek saat tombol "Open" ditekan */
+.cover-screen.opened {
+    transform: translateY(-100vh); 
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+/* --- 5. KOMPONEN UTAMA (KARTU ACARA, TOMBOL, DLL) --- */
+.hero-section {
+    padding: 60px 20px 80px;
+    background-color: var(--bg-secondary);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.card-event {
+    background-color: var(--bg-primary);
+    border: 2px solid var(--text-dark);
+    border-radius: 15px;
+}
+
+.border-custom {
+    border: 3px solid var(--text-dark);
+}
+
+.btn-custom {
+    background-color: var(--text-dark);
+    color: var(--bg-primary);
+    font-weight: bold;
+}
+
+.btn-custom:hover, .btn-outline-custom:hover {
+    background-color: var(--accent-blue);
+    color: var(--bg-primary); 
+    border-color: var(--accent-blue);
+}
+
+.btn-outline-custom {
+    border: 2px solid var(--text-dark);
+    color: var(--text-dark);
+    background: transparent;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+/* --- 6. BAGIAN KISAH CINTA (TIMELINE) --- */
+.timeline {
+    border-left: 2px solid var(--bg-primary);
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.timeline h4 {
+    font-family: 'Abril Fatface', serif;
+    margin-top: 1.5rem;
+}
+
+/* --- 7. TOMBOL MUSIK MELAYANG --- */
+.btn-music {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: var(--text-dark);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: putar 4s linear infinite;
+}
+
+@keyframes putar {
+    100% { transform: rotate(360deg); }
+}
+
+/* --- 8. MENU NAVIGASI BAWAH --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-top: 1px solid var(--text-dark);
+}
+
+.bottom-nav a {
+    color: var(--text-dark);
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.bottom-nav a:hover {
+    transform: scale(1.2);
+    color: var(--accent-blue);
+}
+
+/* --- 9. ANIMASI DEKORASI (BURUNG, KUPU-KUPU, BUNGA) --- */
+.decor-bird {
+    animation: terbang 6s ease-in-out infinite alternate;
+}
+
+@keyframes terbang {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.decor-butterfly {
+    animation: kepakKupu 3s ease-in-out infinite alternate;
+}
+
+@keyframes kepakKupu {
+    0% { transform: scale(1) translateY(0); }
+    100% { transform: scale(1.05) translateY(-10px); }
+}
+
+.decor-flower {
+    animation: putarPelan 20s linear infinite; 
+}
+
+@keyframes putarPelan {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* --- 10. ANIMASI BINTANG & HATI DI COVER --- */
+.floating-decor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.decor-item {
+    position: absolute;
+    bottom: -10%;
+    color: var(--bg-primary);
+    opacity: 0.6;
+    animation: floatUp 6s linear infinite;
+}
+
+.d1 { left: 15%; font-size: 2rem; animation-delay: 0s; }
+.d2 { left: 50%; font-size: 1.5rem; animation-delay: 2s; color: var(--bg-secondary); }
+.d3 { left: 80%; font-size: 2.5rem; animation-delay: 4s; }
+.d4 { left: 30%; font-size: 1.2rem; animation-delay: 1.5s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translateY(-110vh) scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+/* --- 11. BAGIAN GALERI FOTO (MEMORY RECAP) --- */
+.memory-img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid var(--accent-blue);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.memory-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.oval-img {
+    width: 280px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 3px solid var(--text-dark);
+}
+
+.btn-outline-custom.btn-sm {
+    padding: 4px 15px;
+    font-size: 0.85rem;
+}
